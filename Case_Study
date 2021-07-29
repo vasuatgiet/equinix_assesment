@@ -1,0 +1,13 @@
+Case Study! Equinix!
+
+Provide a way to monitor the cluster
+  Cluster can be monitored via Prometheus or cadvisor or Kubernetes dashboard.
+  
+How Can You Best Secure Your Kubernetes Deployment?
+  Enable Role-Based Access Control (RBAC)
+  Use Third-Party Authentication for API Server.
+  Protect ETCD with TLS and Firewall.
+  Isolate Kubernetes Nodes.
+  Monitor Network Traffic to Limit Communications.
+  Use Process Whitelisting.
+  Turn on Audit Logging.
