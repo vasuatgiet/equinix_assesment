@@ -1,5 +1,31 @@
 Case Study! Equinix!
 
+root@master:~# kubectl get pods --all-namespaces
+NAMESPACE     NAME                             READY   STATUS    RESTARTS   AGE
+default       nginxapp-7956cd87bb-dzvq8        1/1     Running   0          17m
+default       nginxapp-7956cd87bb-tcnmb        1/1     Running   0          21m
+default       nginxapp-7956cd87bb-vsszg        1/1     Running   0          17m
+default       nginxapp-7956cd87bb-vvs2n        1/1     Running   0          17m
+kube-system   coredns-558bd4d5db-lkx7d         1/1     Running   0          5h5m
+kube-system   coredns-558bd4d5db-xnmnp         1/1     Running   0          5h5m
+kube-system   etcd-master                      1/1     Running   0          5h5m
+kube-system   kube-apiserver-master            1/1     Running   0          5h5m
+kube-system   kube-controller-manager-master   1/1     Running   0          5h5m
+kube-system   kube-flannel-ds-758gj            1/1     Running   0          4h58m
+kube-system   kube-flannel-ds-88x7q            1/1     Running   0          4h58m
+kube-system   kube-flannel-ds-r45j2            1/1     Running   0          110m
+kube-system   kube-proxy-845sq                 1/1     Running   0          5h3m
+kube-system   kube-proxy-g8ddt                 1/1     Running   0          110m
+kube-system   kube-proxy-kld4f                 1/1     Running   0          5h5m
+kube-system   kube-scheduler-master            1/1     Running   0          5h5m
+root@master:~# kubectl get pods -o wide
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+nginxapp-7956cd87bb-dzvq8   1/1     Running   0          17m   10.244.2.5   worker2   <none>           <none>
+nginxapp-7956cd87bb-tcnmb   1/1     Running   0          21m   10.244.2.4   worker2   <none>           <none>
+nginxapp-7956cd87bb-vsszg   1/1     Running   0          17m   10.244.1.5   worker    <none>           <none>
+nginxapp-7956cd87bb-vvs2n   1/1     Running   0          17m   10.244.2.6   worker2   <none>           <none>
+root@master:~#
+
 Provide a way to monitor the cluster
   Cluster can be monitored via Prometheus or cadvisor or Kubernetes dashboard.
   
