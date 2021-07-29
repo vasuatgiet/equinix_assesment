@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginxapp
+  name: nginxapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginxapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginxapp
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "echo typing cat on `uname -n` > /usr/share/nginx/html/index.html"]
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
